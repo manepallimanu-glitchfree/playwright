@@ -19,7 +19,6 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(agent.builddirectory)'
     Contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb|*.json)'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
