@@ -22,3 +22,8 @@ steps:
     SourceFolder: '$(agent.builddirectory)'
     Contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb)'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
